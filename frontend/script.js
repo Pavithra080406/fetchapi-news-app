@@ -7,7 +7,7 @@ const statusEl = document.getElementById('status');
 const resultsEl = document.getElementById('results');
 
 // <-- set your Render backend URL here
-const API_BASE = 'https://fetchapi-new-app.onrender.com/';
+const API_BASE = 'https://fetchapi-new-app.onrender.com';
 
 async function loadNews() {
   statusEl.textContent = 'Loading...';
