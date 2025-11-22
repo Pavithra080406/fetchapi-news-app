@@ -6,6 +6,9 @@ const maxInput = document.getElementById('max');
 const statusEl = document.getElementById('status');
 const resultsEl = document.getElementById('results');
 
+// <-- set your Render backend URL here
+const API_BASE = 'https://fetchapi-new-app.onrender.com/';
+
 async function loadNews() {
   statusEl.textContent = 'Loading...';
   resultsEl.innerHTML = '';
@@ -20,7 +23,7 @@ async function loadNews() {
   params.append('max', String(max));
 
   try {
-    const res = await fetch('/api/news?' + params.toString());
+    const res = await fetch(`${API_BASE}/api/news?` + params.toString());
     if (!res.ok) throw new Error('Server error: ' + res.status);
     const payload = await res.json();
     const articles = payload.articles || [];
